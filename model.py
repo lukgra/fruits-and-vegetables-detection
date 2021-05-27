@@ -17,7 +17,7 @@ def preprocess(file_path):
 	img = np.expand_dims(img, axis=0)
 
 	data = json.dumps({
-			'instances': img.tolist()
+		'instances': img.tolist()
     })
 
 	response = requests.post(MODEL_URI, data=data.encode('utf-8'))
