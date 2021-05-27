@@ -14,11 +14,12 @@ def upload():
 		if uploaded_file.filename != '':
 			image_path = os.path.join('static', 'images', uploaded_file.filename)
 			uploaded_file.save(image_path)
+			
 			# class_name = model.get_prediction(image_path)
 			result = {
 				'image_path': image_path,
 			}
-			return render_template('predict.html', result=result)
+			return render_template('predict.html', result=image_path)
 	return render_template('index.html')
 
 if __name__=='__main__':
