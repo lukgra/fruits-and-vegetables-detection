@@ -5,11 +5,11 @@ import requests
 import json
 
 IMG_SIZE = 224
-MODEL_URI = "http://localhost:8501/v1/models/fruit_net:predict"
+
 with open('classes.json') as f:
 	CLASSES = json.load(f)
 
-def preprocess(file_path):
+def preprocess_and_predict(file_path, uri):
 	img = read_file(file_path)
 	# decode and resize image
 	img = decode_png(img, channels=3)
@@ -20,7 +20,7 @@ def preprocess(file_path):
 		'instances': img.tolist()
     })
 
-	response = requests.post(MODEL_URI, data=data.encode('utf-8'))
+	response = requests.post(uri, data=data.encode('utf-8'))
 	result = json.loads(response.text)
 	result = np.argmax(result['predictions'])
 
