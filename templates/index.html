@@ -6,7 +6,7 @@
 
 {% block body %}
 	<form id="subForm" action='/predict' method="post" enctype="multipart/form-data">
-		<input type="file" name="file" accept="image/*" onchange="previewImage(event)">
+		<input type="file" name="file" accept=".bmp, .jpg, .png, .gif" onchange="previewImage(event)">
 		<br><br>
 		<input type="submit" value="Detect!", onclick="this.disabled=true;this.form.submit();">
 	</form> 
