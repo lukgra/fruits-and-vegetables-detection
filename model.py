@@ -1,5 +1,5 @@
-from tensorflow.io import read_file
-from tensorflow.image import decode_jpeg, decode_png, resize
+from tensorflow.io import read_file, decode_image
+from tensorflow.image import resize
 import numpy as np
 import requests
 import json
@@ -12,7 +12,7 @@ with open('classes.json') as f:
 def preprocess_and_predict(file_path, uri):
 	img = read_file(file_path)
 	# decode and resize image
-	img = decode_png(img, channels=3)
+	img = decode_image(img, channels=3)
 	img = resize(img, [IMG_SIZE, IMG_SIZE])
 	img = np.expand_dims(img, axis=0)
 
