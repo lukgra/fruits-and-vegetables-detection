@@ -15,7 +15,7 @@ def upload():
 		uploaded_file = request.files['file']
 
 		if uploaded_file.filename != '':
-			image_path = os.path.join('static', 'images', uploaded_file.filename)
+			image_path = os.path.join('data', 'images', uploaded_file.filename)
 			uploaded_file.save(image_path)
 			output = preprocess_and_predict(image_path, MODEL_URI)
 			os.remove(image_path)
