@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block body %}
-	<form id="subForm" action='/predict' method="post" enctype="multipart/form-data">
-		<input type="file" name="file" accept=".bmp, .jpg, .png, .gif" onchange="previewImage(event)">
-		<br><br>
-		<input type="submit" value="Detect!", onclick="this.disabled=true;this.form.submit();">
-	</form> 
-	<div>
-		<img style="height:100px;width:100px;display:none" id="image"/>
+	<div class="container">
+		<form id="subForm" action='/' method="post" enctype="multipart/form-data">
+			<input class="buttonStyle" type="file" name="file" accept=".bmp, .jpg, .png, .gif" onchange="previewImage(event)">
+			<input class="buttonStyle" type="submit" value="Detect!", onclick="this.disabled=true;this.form.submit();">
+		</form> 
+	</div>
+	<div class="imageContainer">
+		<img id="image"/>
 	</div>
 
 	<script type="text/javascript">

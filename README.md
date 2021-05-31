@@ -17,4 +17,3 @@ Then serve the model in a container and run the app:
 docker run -p <port>:<port> --name <container_name> --mount type=bind,source=saved_models/fruit_net/,target=<path_to_model_in_the_container> -e MODEL_NAME=<model_name> -t tensorflow/serving
 python app.py
 ~~~
-

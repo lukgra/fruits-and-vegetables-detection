@@ -6,7 +6,7 @@ import json
 
 IMG_SIZE = 224
 
-with open('classes.json') as f:
+with open('classes.json') as f:	
 	CLASSES = json.load(f)
 
 def preprocess_and_predict(file_path, uri):

@@ -5,10 +5,13 @@
 {% endblock %}
 
 {% block body %}
-	<form action="/" method="get">
-		<button>Try again!</button>
-	</form>
-	<p>
-		{{ result }}
-	</p>
+	<div class="container">
+		<p class="result">
+			{{ result }}
+		</p>
+		<form action="/" method="get">
+			<button class="buttonStyle">Try again!</button>
+		</form>
+	</div>
+	
 {% endblock %}

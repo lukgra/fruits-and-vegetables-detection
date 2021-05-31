@@ -6,10 +6,6 @@ app = Flask(__name__)
 MODEL_URI = "http://localhost:8501/v1/models/fruit_net:predict" # uri for tensorflow serving
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
-	return render_template('index.html')
-
-@app.route('/predict', methods=['GET', 'POST'])
 def upload():
 	if request.method == 'POST':
 		uploaded_file = request.files['file']
