@@ -5,24 +5,30 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<form id="subForm" action='/' method="post" enctype="multipart/form-data">
-			<input class="buttonStyle" type="file" name="file" accept=".bmp, .jpg, .png, .gif" onchange="previewImage(event)">
-			<input class="buttonStyle" type="submit" value="Detect!", onclick="this.disabled=true;this.form.submit();">
-		</form> 
+	<div id="content">
+		<div class="titleContainer">
+			<h1 class="appTitle">Fruit and Vegetable Detection</h1>
+		</div>
+		<div class="container">
+			<form id="subForm" action='/' method="post" enctype="multipart/form-data">
+				<input class="buttonStyle" type="file" name="file" accept=".bmp, .jpg, .png, .gif" onchange="previewImage(event)">
+				<input class="buttonStyle" type="submit" value="Detect!", onclick="this.disabled=true;this.form.submit();">
+			</form> 
+		</div>
+		<div class="imageContainer">
+			<img id="image"/>
+		</div>
 	</div>
-	<div class="imageContainer">
-		<img id="image"/>
-	</div>
+
 
 	<script type="text/javascript">
-		var previewImage = function(event) {
-
-			var preview = document.getElementById('image');
-
-			preview.src = URL.createObjectURL(event.target.files[0]);
-
-			preview.style.display = "block";
-		};
+		function previewImage(event) {
+			var reader = new FileReader();
+			reader.onload = function() {
+				var output = document.getElementById('image');
+				output.src = reader.result;
+			}
+			reader.readAsDataURL(event.target.files[0]);
+		}
 	</script>
 {% endblock %}

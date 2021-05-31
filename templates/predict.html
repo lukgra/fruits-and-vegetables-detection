@@ -5,13 +5,18 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<p class="result">
-			{{ result }}
-		</p>
-		<form action="/" method="get">
-			<button class="buttonStyle">Try again!</button>
-		</form>
+	<div id="content">
+		<div class="titleContainer">
+			<h1 class="appTitle">Fruit and Vegetable Detection</h1>
+		</div>
+		<div class="container">
+
+			<p class="result">
+				{{ result }}
+			</p>
+			<form action="/" method="get">
+				<button class="buttonStyle">Try again!</button>
+			</form>
+		</div>
 	</div>
-	
 {% endblock %}
