@@ -2,7 +2,7 @@ from app import app
 from io import StringIO, BytesIO
 import unittest
 
-class TestCase(unittest.TestCase):
+class AppTestCase(unittest.TestCase):
 
 	# Check if response is 200
 	def test_index_load(self):
