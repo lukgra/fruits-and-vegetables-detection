@@ -16,9 +16,11 @@ def preprocess_and_predict(file_path, uri):
 	img = resize(img, [IMG_SIZE, IMG_SIZE])
 	img = np.expand_dims(img, axis=0)
 
-	data = json.dumps({
-		'instances': img.tolist()
-    })
+	data = json.dumps(
+		{
+			'instances': img.tolist()
+ 		}
+ 	)
 
 	response = requests.post(uri, data=data.encode('utf-8'))
 	result = json.loads(response.text)

@@ -14,8 +14,8 @@ def upload():
 			image_path = os.path.join('data', 'images', uploaded_file.filename)
 			uploaded_file.save(image_path)
 			output = preprocess_and_predict(image_path, MODEL_URI)
+			
 			os.remove(image_path)
-
 			return render_template('predict.html', result=output)
 
 	return render_template('index.html')
