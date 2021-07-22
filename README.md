@@ -1,11 +1,10 @@
 Fruit and vegetable Detection App
 =====
 
-Simple fruit and vegetable image classification app made with Flask.
-
+Classification problem resolved with deep learning.
 I used CNN accompanied by transfer learning and designed it to be served as a Docker container with TF-Serving.
 
-How to run (note: make sure You've got docker installed):
+How to run (note: make sure You've got Docker installed):
 ~~~
 git clone https://github.com/lukgra/fruits-and-vegetables-detection
 pip install -r requirements.txt
